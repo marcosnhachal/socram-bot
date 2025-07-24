@@ -24,10 +24,6 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copiar código fonte
-# Copiar a pasta utils explicitamente
-COPY utils ./utils
-
-# Copiar o restante do código fonte
 COPY . .
 
 # Criar diretórios necessários
