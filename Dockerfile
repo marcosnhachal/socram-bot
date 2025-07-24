@@ -27,3 +27,5 @@ EXPOSE 3000
 
 # Comando para iniciar o bot
 CMD ["npm", "start"]
+
+
