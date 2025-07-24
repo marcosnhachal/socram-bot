@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: whatsapp-bot
+    env: node
+    plan: free
+    buildCommand: npm install && pip3 install yt-dlp
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: whatsapp-bot-disk
+      mountPath: /app/downloads
+      sizeGB: 1
+

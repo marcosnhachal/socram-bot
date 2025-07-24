@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+INSTALACAO.md
+.env
+.wwebjs_auth
+.wwebjs_cache
+downloads/*
+temp/*
+screenshots/*
+
