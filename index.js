@@ -73,7 +73,7 @@ class WhatsAppBot {
             const [command, ...args] = text.split(" ");
             const query = args.join(" ");
 
-            console.log(📨 Comando recebido: ${command} de ${message.from});
+            console.log(Comando recebido: ${command} de ${message.from}); // LINHA 76 CORRIGIDA
 
             // Executar comando
             if (this.commands[command]) {
