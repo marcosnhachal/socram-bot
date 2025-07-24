@@ -26,6 +26,12 @@ RUN npm ci --only=production
 # Copiar código fonte
 COPY . .
 
+# Adicionar este comando para depuração
+RUN ls -R /app
+
+# Criar diretórios necessários
+RUN mkdir -p downloads temp
+
 # Criar diretórios necessários
 RUN mkdir -p downloads temp
 
