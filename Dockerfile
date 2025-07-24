@@ -5,14 +5,7 @@ FROM node:18-slim
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
-    ffmpeg \
-    wget \
-    curl \
     && rm -rf /var/lib/apt/lists/*
-
-# Instalar yt-dlp
-RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
-    chmod a+rx /usr/local/bin/yt-dlp
 
 # Criar diretório de trabalho
 WORKDIR /app
@@ -26,12 +19,6 @@ RUN npm ci --only=production
 # Copiar código fonte
 COPY . .
 
-# Adicionar este comando para depuração
-RUN ls -R /app
-
-# Criar diretórios necessários
-RUN mkdir -p downloads temp
-
 # Criar diretórios necessários
 RUN mkdir -p downloads temp
 
@@ -40,4 +27,3 @@ EXPOSE 3000
 
 # Comando para iniciar o bot
 CMD ["npm", "start"]
-
